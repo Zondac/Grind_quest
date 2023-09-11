@@ -35,7 +35,8 @@ export function GameGrid() {
         <Grid item xs={3}>
           <Box
             sx={{
-              height: "800px",
+              position: "relative",
+              height: "44vh",
               backgroundColor: "darkslategrey",
               border: "2px solid lightgrey",
               borderRadius: "16px",
