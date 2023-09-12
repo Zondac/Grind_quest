@@ -1,22 +1,97 @@
-import { Button } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import { ItemType } from "./Items";
+import { Stack } from "@mui/material";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import { useState } from "react";
+import { TopBar } from "./TopBar";
+import { EquipmentModule } from "./EquipmentModule";
+import { MiddleWindow } from "./MiddleWindow";
+import { HideArmor, Item, SharpRatFang } from "./ItemList";
+import { LootModule } from "./Modules/LootModule";
+import { Stats } from "./Stats";
 
-export const Item = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  width: "100%",
-  color: theme.palette.text.secondary,
-}));
+export function GameGrid() {
+  const [playfield, setPlayfield] = useState<string | null>(null);
+  const [playerStats, setPlayerStats] = useState<Stats>({
+    Attack: 0,
+    Believing: 0,
+    Constitution: 0,
+    Defense: 0,
+    Emotion: 0,
+    Forgiving: 0,
+    Heart: 0,
+    Imagination: 0,
+    Magic: 0,
+    Muscles: 0,
+    Piety: 0,
+    Sanity: 0,
+    Serenity: 0,
+    Toughness: 0,
+  });
+  const [Equipment, setEquipment] = useState({
+    Weapon: SharpRatFang,
+    Trinket: null,
+    Eyewear: null,
+    Necklace: null,
+    Choker: null,
+    Jewelry: null,
+    OffHand: null,
+    Wristwear: null,
+    Gloves: null,
+    Chest: HideArmor,
+    Pants: null,
+    Socks: null,
+    Shoes: null,
+    Backwear: null,
+    Belt: null,
+    Beltwear: null,
+  });
 
-export const SharpRatFang: ItemType = {
-  image: "../../public/Rat_tooth.png",
-  name: "Sharp Rat Fang",
-  description: "Beats hitting them with your fists",
-  stats: {
-    Attack: 1,
-    Emotion: 1,
-  },
-};
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <TopBar />
+        </Grid>
+        <Grid item xs={1}>
+          <Stack spacing={2}>
+            <Item onClick={() => setPlayfield("stats")}>Stats</Item>
+            <Item onClick={() => setPlayfield("fight")}>fight</Item>
+            <Item onClick={() => setPlayfield("inventory")}>Inventory</Item>
+          </Stack>
+        </Grid>
+        <Grid item xs={6.5}>
+          <MiddleWindow state={playfield} stats={playerStats} />
+        </Grid>
+        <Grid item xs={4.5}>
+          <Stack>
+            <Box
+              sx={{
+                position: "relative",
+                height: "500px",
+                backgroundColor: "darkslategrey",
+                border: "2px solid lightgrey",
+                borderRadius: "16px",
+              }}
+            >
+              EQUIPMENT
+              <EquipmentModule Equipment={Equipment} />
+            </Box>
+            <Box
+              sx={{
+                mt: 2,
+                position: "relative",
+                height: "256px",
+                backgroundColor: "darkslategrey",
+                border: "2px solid lightgrey",
+                borderRadius: "16px",
+              }}
+            >
+              LOOT
+              <LootModule />
+            </Box>
+          </Stack>
+        </Grid>
+      </Grid>
+    </Box>
+  );
+}

@@ -89,7 +89,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Trinket !== null ? (
-            <img src={props.Equipment.Trinket.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Trinket)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Trinket.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Trinket</Typography>
           )}
@@ -98,7 +104,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Eyewear !== null ? (
-            <img src={props.Equipment.Eyewear.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Eyewear)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Eyewear.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Eyewear</Typography>
           )}
@@ -107,7 +119,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Necklace !== null ? (
-            <img src={props.Equipment.Necklace.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Necklace)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Necklace.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Necklace</Typography>
           )}
@@ -116,7 +134,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Choker !== null ? (
-            <img src={props.Equipment.Choker.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Choker)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Choker.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Choker</Typography>
           )}
@@ -125,7 +149,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Jewelry !== null ? (
-            <img src={props.Equipment.Jewelry.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Jewelry)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Jewelry.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Jewelry</Typography>
           )}
@@ -134,7 +164,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.OffHand !== null ? (
-            <img src={props.Equipment.OffHand.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.OffHand)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.OffHand.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>OffHand</Typography>
           )}
@@ -143,7 +179,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Wristwear !== null ? (
-            <img src={props.Equipment.Wristwear.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Wristwear)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Wristwear.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Wristwear</Typography>
           )}
@@ -152,7 +194,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Gloves !== null ? (
-            <img src={props.Equipment.Gloves.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Gloves)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Gloves.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Gloves</Typography>
           )}
@@ -161,7 +209,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Chest !== null ? (
-            <img src={props.Equipment.Chest.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Chest)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Chest.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Chest</Typography>
           )}
@@ -170,7 +224,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Pants !== null ? (
-            <img src={props.Equipment.Pants.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Pants)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Pants.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Pants</Typography>
           )}
@@ -179,7 +239,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Socks !== null ? (
-            <img src={props.Equipment.Socks.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Socks)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Socks.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Socks</Typography>
           )}
@@ -188,7 +254,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Shoes !== null ? (
-            <img src={props.Equipment.Shoes.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Shoes)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Shoes.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Shoes</Typography>
           )}
@@ -197,7 +269,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Backwear !== null ? (
-            <img src={props.Equipment.Backwear.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Backwear)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Backwear.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Backwear</Typography>
           )}
@@ -206,7 +284,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Belt !== null ? (
-            <img src={props.Equipment.Belt.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Belt)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Belt.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Belt</Typography>
           )}
@@ -215,7 +299,13 @@ export function EquipmentModule(props: Props) {
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
           {props.Equipment.Beltwear !== null ? (
-            <img src={props.Equipment.Beltwear.image} />
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Beltwear)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Beltwear.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Beltwear</Typography>
           )}
