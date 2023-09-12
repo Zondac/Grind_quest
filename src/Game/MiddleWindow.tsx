@@ -1,8 +1,11 @@
 import { Typography } from "@mui/material/";
 import { RegionSelect } from "./MiddleWindowComponents/RegionSelect";
+import { StatsPage } from "./MiddleWindowComponents/StatsPage";
+import { Stats } from "./Stats";
 
 type Props = {
   state: string | null;
+  stats: Stats;
 };
 
 export function MiddleWindow(props: Props) {
@@ -11,7 +14,7 @@ export function MiddleWindow(props: Props) {
       return <RegionSelect />;
       break;
     case "stats":
-      return <Typography>stats here soon!</Typography>;
+      return <StatsPage stats={props.stats} />;
       break;
     case "inventory":
       return <Typography>inventory here soon!</Typography>;

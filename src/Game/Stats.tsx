@@ -1,16 +1,16 @@
 export type Stats = {
   Attack?: number;
-  Defense?: number;
-  Toughness?: number;
-  Heart?: number;
   Believing?: number;
-  Imagination?: number;
+  Constitution?: number;
+  Defense?: number;
   Emotion?: number;
+  Forgiving?: number;
+  Heart?: number;
+  Imagination?: number;
+  Magic?: number;
+  Muscles?: number;
+  Piety?: number;
   Sanity?: number;
   Serenity?: number;
-  Constitution?: number;
-  Muscles?: number;
-  Forgiving?: number;
-  Magic?: number;
-  Piety?: number;
+  Toughness?: number;
 };

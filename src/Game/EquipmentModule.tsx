@@ -1,23 +1,8 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Tooltip, Typography } from "@mui/material";
 import { ItemType } from "./Items";
 
 type Props = {
-  Weapon: ItemType | null;
-  Trinket: ItemType | null;
-  Eyewear: ItemType | null;
-  Necklace: ItemType | null;
-  Choker: ItemType | null;
-  Jewelry: ItemType | null;
-  OffHand: ItemType | null;
-  Wristwear: ItemType | null;
-  Gloves: ItemType | null;
-  Chest: ItemType | null;
-  Pants: ItemType | null;
-  Socks: ItemType | null;
-  Shoes: ItemType | null;
-  Backwear: ItemType | null;
-  Belt: ItemType | null;
-  Beltwear: ItemType | null;
+  Equipment: EquipmentsType;
 };
 
 const slotStyle = {
@@ -37,6 +22,50 @@ const slotStyle = {
   },
 };
 
+function ItemTooltip(item: ItemType) {
+  return (
+    <Box>
+      <Typography variant="h6">{item.name}</Typography>
+      {item.stats.Attack && (
+        <Typography>Attack: {item.stats.Attack}</Typography>
+      )}
+      {item.stats.Believing && (
+        <Typography>Believing: {item.stats.Believing}</Typography>
+      )}
+      {item.stats.Constitution && (
+        <Typography>Constitution: {item.stats.Constitution}</Typography>
+      )}
+      {item.stats.Defense && (
+        <Typography>Defense: {item.stats.Defense}</Typography>
+      )}
+      {item.stats.Emotion && (
+        <Typography>Emotion: {item.stats.Emotion}</Typography>
+      )}
+      {item.stats.Forgiving && (
+        <Typography>Forgiving: {item.stats.Forgiving}</Typography>
+      )}
+      {item.stats.Heart && <Typography>Heart: {item.stats.Heart}</Typography>}
+      {item.stats.Imagination && (
+        <Typography>Imagination: {item.stats.Imagination}</Typography>
+      )}
+      {item.stats.Magic && <Typography>Magic: {item.stats.Magic}</Typography>}
+      {item.stats.Muscles && (
+        <Typography>Muscles: {item.stats.Muscles}</Typography>
+      )}
+      {item.stats.Sanity && (
+        <Typography>Sanity: {item.stats.Sanity}</Typography>
+      )}
+      {item.stats.Serenity && (
+        <Typography>Serenity: {item.stats.Serenity}</Typography>
+      )}
+      {item.stats.Toughness && (
+        <Typography>Toughness: {item.stats.Toughness}</Typography>
+      )}
+      <Typography variant="caption">{item.description}</Typography>
+    </Box>
+  );
+}
+
 const gridWidth = 3;
 
 export function EquipmentModule(props: Props) {
@@ -44,8 +73,14 @@ export function EquipmentModule(props: Props) {
     <Grid container spacing={2} p={2}>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Weapon !== null ? (
-            <img src={props.Weapon.image} />
+          {props.Equipment.Weapon !== null ? (
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Weapon)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Weapon.image} />
+            </Tooltip>
           ) : (
             <Typography pt={3}>Weapon</Typography>
           )}
@@ -53,8 +88,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Trinket !== null ? (
-            <img src={props.Trinket.image} />
+          {props.Equipment.Trinket !== null ? (
+            <img src={props.Equipment.Trinket.image} />
           ) : (
             <Typography pt={3}>Trinket</Typography>
           )}
@@ -62,8 +97,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Eyewear !== null ? (
-            <img src={props.Eyewear.image} />
+          {props.Equipment.Eyewear !== null ? (
+            <img src={props.Equipment.Eyewear.image} />
           ) : (
             <Typography pt={3}>Eyewear</Typography>
           )}
@@ -71,8 +106,8 @@ export function EquipmentModule(props: Props) {
       </Grid>{" "}
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Necklace !== null ? (
-            <img src={props.Necklace.image} />
+          {props.Equipment.Necklace !== null ? (
+            <img src={props.Equipment.Necklace.image} />
           ) : (
             <Typography pt={3}>Necklace</Typography>
           )}
@@ -80,8 +115,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Choker !== null ? (
-            <img src={props.Choker.image} />
+          {props.Equipment.Choker !== null ? (
+            <img src={props.Equipment.Choker.image} />
           ) : (
             <Typography pt={3}>Choker</Typography>
           )}
@@ -89,8 +124,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Jewelry !== null ? (
-            <img src={props.Jewelry.image} />
+          {props.Equipment.Jewelry !== null ? (
+            <img src={props.Equipment.Jewelry.image} />
           ) : (
             <Typography pt={3}>Jewelry</Typography>
           )}
@@ -98,8 +133,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.OffHand !== null ? (
-            <img src={props.OffHand.image} />
+          {props.Equipment.OffHand !== null ? (
+            <img src={props.Equipment.OffHand.image} />
           ) : (
             <Typography pt={3}>OffHand</Typography>
           )}
@@ -107,8 +142,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Wristwear !== null ? (
-            <img src={props.Wristwear.image} />
+          {props.Equipment.Wristwear !== null ? (
+            <img src={props.Equipment.Wristwear.image} />
           ) : (
             <Typography pt={3}>Wristwear</Typography>
           )}
@@ -116,8 +151,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Gloves !== null ? (
-            <img src={props.Gloves.image} />
+          {props.Equipment.Gloves !== null ? (
+            <img src={props.Equipment.Gloves.image} />
           ) : (
             <Typography pt={3}>Gloves</Typography>
           )}
@@ -125,8 +160,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Chest !== null ? (
-            <img src={props.Chest.image} />
+          {props.Equipment.Chest !== null ? (
+            <img src={props.Equipment.Chest.image} />
           ) : (
             <Typography pt={3}>Chest</Typography>
           )}
@@ -134,8 +169,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Pants !== null ? (
-            <img src={props.Pants.image} />
+          {props.Equipment.Pants !== null ? (
+            <img src={props.Equipment.Pants.image} />
           ) : (
             <Typography pt={3}>Pants</Typography>
           )}
@@ -143,8 +178,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Socks !== null ? (
-            <img src={props.Socks.image} />
+          {props.Equipment.Socks !== null ? (
+            <img src={props.Equipment.Socks.image} />
           ) : (
             <Typography pt={3}>Socks</Typography>
           )}
@@ -152,8 +187,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Shoes !== null ? (
-            <img src={props.Shoes.image} />
+          {props.Equipment.Shoes !== null ? (
+            <img src={props.Equipment.Shoes.image} />
           ) : (
             <Typography pt={3}>Shoes</Typography>
           )}
@@ -161,8 +196,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Backwear !== null ? (
-            <img src={props.Backwear.image} />
+          {props.Equipment.Backwear !== null ? (
+            <img src={props.Equipment.Backwear.image} />
           ) : (
             <Typography pt={3}>Backwear</Typography>
           )}
@@ -170,8 +205,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Belt !== null ? (
-            <img src={props.Belt.image} />
+          {props.Equipment.Belt !== null ? (
+            <img src={props.Equipment.Belt.image} />
           ) : (
             <Typography pt={3}>Belt</Typography>
           )}
@@ -179,8 +214,8 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={gridWidth}>
         <Box sx={slotStyle}>
-          {props.Beltwear !== null ? (
-            <img src={props.Beltwear.image} />
+          {props.Equipment.Beltwear !== null ? (
+            <img src={props.Equipment.Beltwear.image} />
           ) : (
             <Typography pt={3}>Beltwear</Typography>
           )}
