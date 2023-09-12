@@ -1,12 +1,9 @@
 import { Typography } from "@mui/material/";
 
 type Props = {
-    state: string;
-}
+  state: string | null;
+};
 
-
-export function MiddleWindow(props: Props){
-    return(
-            <Typography>{props.state}</Typography>
-    )
+export function MiddleWindow(props: Props) {
+  return <Typography>{props.state}</Typography>;
 }
