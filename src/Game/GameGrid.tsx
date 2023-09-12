@@ -5,6 +5,7 @@ import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import { TopBar } from "./TopBar";
 import { EquipmentModule } from "./EquipmentModule";
+import { MiddleWindow } from "./MiddleWindow";
 
 const Item = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -16,7 +17,7 @@ const Item = styled(Button)(({ theme }) => ({
 }));
 
 export function GameGrid() {
-  const [clicked, setClicked] = useState<number>(0);
+  const [playfield, setPlayfield] = useState<string|null>(null)
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -26,12 +27,12 @@ export function GameGrid() {
         </Grid>
         <Grid item xs={1}>
           <Stack spacing={2}>
-            <Item>Stats</Item>
-            <Item>fight</Item>
-            <Item>Inventory</Item>
+            <Item onClick={() => setPlayfield("stats")}>Stats</Item>
+            <Item onClick={() => setPlayfield("fight")}>fight</Item>
+            <Item onClick={() => setPlayfield("inventory")}>Inventory</Item>
           </Stack>
         </Grid>
-        <Grid item xs={5}></Grid>
+        <Grid item xs={5}><MiddleWindow state={playfield}/></Grid>
         <Grid item xs={3}>
           <Box
             sx={{
