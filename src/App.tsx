@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import "./App.css";
-import { GameGrid } from "./Game/GameGrid";
+import { GameGrid } from "./Game/GameGrid.1";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
