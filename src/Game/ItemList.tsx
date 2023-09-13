@@ -186,7 +186,7 @@ export const ScrappyBelt: ItemType = {
   image: "../../Scrappy_belt.png",
   name: "Scrappy Belt",
   slot: "Belt",
-  description: "Now I can hold even more items!",
+  description: "Now my pants will finally stop falling down!",
   stats: {
     Defense: 1,
     Heart: 1,
@@ -249,7 +249,7 @@ export const ScrapIronShield: ItemType = {
   image: "../../Scrap_iron_shield.png",
   name: "Scrap Iron Shield",
   slot: "Off-hand",
-  description: "It's a shield made from scrap iron.",
+  description: "Careful you don't catch tetanus.",
   stats: {
     Defense: 10,
     Toughness: 8,
@@ -261,7 +261,8 @@ export const ScrapIronLongsword: ItemType = {
   image: "../../Scrap_iron_longsword.png",
   name: "Scrap Iron Longsword",
   slot: "Weapon",
-  description: "It's a longsword made from scrap iron.",
+  description:
+    "May give your enemies tetanus! Or break if you hit them too hard.",
   stats: {
     Attack: 13,
     Defense: 6,
@@ -286,7 +287,7 @@ export const RoyalScepter: ItemType = {
 export const Underpants: ItemType = {
   image: "../../Goblin_underpants.png",
   name: "Goblin King's Underpants",
-  slot: "Backwear",
+  slot: "Pants",
   description: "Reeks of sweat and mud.",
   stats: {
     Defense: 7,

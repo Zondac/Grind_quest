@@ -7,15 +7,21 @@ import { EquipmentModule } from "./EquipmentModule";
 import { MiddleWindow } from "./MiddleWindow";
 import {
   BronzeDagger,
+  GiantFang,
   GiantRatCoat,
   GoblinCrown,
+  GoblinWings,
   HideArmor,
   Item,
   PoisonedFang,
   RatFeather,
   RatskinWristbands,
+  ScrapIronLongsword,
+  ScrapIronShield,
+  ScrappyBelt,
   SharpRatFang,
   TheOneRing,
+  Underpants,
   WoodenPitchfork,
 } from "./ItemList";
 import { LootModule } from "./Modules/LootModule";
@@ -80,22 +86,22 @@ export function GameGrid() {
     Zeal: 0,
   });
   const [Equipment, setEquipment] = useState({
-    Weapon: BronzeDagger,
+    Weapon: ScrapIronLongsword,
     Trinket: RatFeather,
     Eyewear: null,
     Headwear: GoblinCrown,
     Necklace: null,
     Choker: null,
     Jewelry: TheOneRing,
-    OffHand: null,
+    OffHand: ScrapIronShield,
     Wristwear: RatskinWristbands,
     Gloves: null,
     Chest: GiantRatCoat,
-    Pants: null,
+    Pants: Underpants,
     Socks: null,
     Shoes: null,
-    Backwear: null,
-    Belt: null,
+    Backwear: GoblinWings,
+    Belt: ScrappyBelt,
     Beltwear: null,
   });
 
