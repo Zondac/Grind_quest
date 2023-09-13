@@ -1,4 +1,4 @@
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Tooltip, Typography } from "@mui/material";
 import { Stats } from "../Stats";
 
 type Props = {
@@ -54,10 +54,18 @@ export function StatsPage(props: Props) {
           {Object.entries(props.stats).map((stat) => {
             return (
               <Box sx={statBoxStyle}>
-                <Grid item>
-                  <Typography>{stat[0]}</Typography>
-                  <Typography textAlign="center">{stat[1] + " "}</Typography>
-                </Grid>
+                <Tooltip
+                  title={<Typography variant="h6">{stat[0]}</Typography>}
+                  placement="top"
+                  arrow
+                >
+                  <Grid item>
+                    <Box textAlign={"center"}>
+                      <img src={stat[0] + "Icon.png"} />
+                    </Box>
+                    <Typography textAlign="center">{stat[1] + " "}</Typography>
+                  </Grid>
+                </Tooltip>
               </Box>
             );
           })}
