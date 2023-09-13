@@ -4,6 +4,7 @@ import { Destination } from "./Locations/Destination";
 
 const mapStyle = {
   width: "100%",
+  minWidth: "80px",
   backgroundColor: "rgba(255,255,255,0.5)",
   borderRadius: "5px",
   userSelect: "none",

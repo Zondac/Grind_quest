@@ -1,4 +1,11 @@
-import { Box, Grid, Stack, Tooltip, Typography } from "@mui/material";
+import {
+  Box,
+  Grid,
+  LinearProgress,
+  Stack,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import { Stats } from "../Stats";
 
 type Props = {
@@ -12,11 +19,13 @@ const statsBoxStyle = {
 };
 
 const statBoxStyle = {
+  position: "relative",
   backgroundColor: "maroon",
   border: "2px solid white",
   borderRadius: "5px",
   m: 1,
   p: 1,
+  px: 3,
 };
 
 const totalBoxStyle = {
@@ -53,20 +62,37 @@ export function StatsPage(props: Props) {
         >
           {Object.entries(props.stats).map((stat) => {
             return (
-              <Box sx={statBoxStyle}>
-                <Tooltip
-                  title={<Typography variant="h6">{stat[0]}</Typography>}
-                  placement="top"
-                  arrow
-                >
+              <Tooltip
+                title={
+                  <Box sx={{ width: "150px" }}>
+                    <Typography sx={{ textAlign: "center" }} variant="h6">
+                      {stat[0]}
+                    </Typography>
+                    <LinearProgress
+                      variant="determinate"
+                      value={80}
+                      color={"success"}
+                    />
+                  </Box>
+                }
+                placement="top"
+                arrow
+              >
+                <Box sx={statBoxStyle}>
                   <Grid item>
                     <Box textAlign={"center"}>
                       <img src={stat[0] + "Icon.png"} />
                     </Box>
-                    <Typography textAlign="center">{stat[1] + " "}</Typography>
+                    <Typography
+                      sx={{ borderTop: "1px solid white" }}
+                      variant="h6"
+                      textAlign="center"
+                    >
+                      {stat[1] + " "}
+                    </Typography>
                   </Grid>
-                </Tooltip>
-              </Box>
+                </Box>
+              </Tooltip>
             );
           })}
         </Grid>
