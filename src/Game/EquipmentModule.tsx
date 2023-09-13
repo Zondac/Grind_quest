@@ -42,23 +42,52 @@ function ItemTooltip(item: ItemType) {
       {item.stats.Forgiving && (
         <Typography>Forgiving: {item.stats.Forgiving}</Typography>
       )}
+      {item.stats.Grit && <Typography>Grit: {item.stats.Grit}</Typography>}
       {item.stats.Heart && <Typography>Heart: {item.stats.Heart}</Typography>}
       {item.stats.Imagination && (
         <Typography>Imagination: {item.stats.Imagination}</Typography>
       )}
+      {item.stats.Jovial && (
+        <Typography>Jovial: {item.stats.Jovial}</Typography>
+      )}
+      {item.stats.Kindness && (
+        <Typography>Kingliness: {item.stats.Kindness}</Typography>
+      )}
+      {item.stats.Love && <Typography>Love: {item.stats.Love}</Typography>}
       {item.stats.Magic && <Typography>Magic: {item.stats.Magic}</Typography>}
-      {item.stats.Muscles && (
-        <Typography>Muscles: {item.stats.Muscles}</Typography>
+      {item.stats.Navigation && (
+        <Typography>Navigation: {item.stats.Navigation}</Typography>
       )}
-      {item.stats.Sanity && (
-        <Typography>Sanity: {item.stats.Sanity}</Typography>
+      {item.stats.Openness && (
+        <Typography>Openess: {item.stats.Openness}</Typography>
       )}
-      {item.stats.Serenity && (
-        <Typography>Serenity: {item.stats.Serenity}</Typography>
+      {item.stats.Piety && <Typography>Piety: {item.stats.Piety}</Typography>}
+      {item.stats.Questioning && (
+        <Typography>Questioning? {item.stats.Questioning}</Typography>
+      )}
+      {item.stats.Responsibility && (
+        <Typography>Responsibility: {item.stats.Responsibility}</Typography>
+      )}
+      {item.stats.Strength && (
+        <Typography>Strength: {item.stats.Strength}</Typography>
       )}
       {item.stats.Toughness && (
         <Typography>Toughness: {item.stats.Toughness}</Typography>
       )}
+      {item.stats.Utilitarianism && (
+        <Typography>Utilitarianism: {item.stats.Utilitarianism}</Typography>
+      )}
+      {item.stats.Vengefulness && (
+        <Typography>Vengefulness: {item.stats.Vengefulness}</Typography>
+      )}
+      {item.stats.Will && <Typography>Will: {item.stats.Will}</Typography>}
+      {item.stats.Xenophobia && (
+        <Typography>Xenophobia: {item.stats.Xenophobia}</Typography>
+      )}
+      {item.stats.Yeehaw && (
+        <Typography>Yeehaw: {item.stats.Yeehaw}</Typography>
+      )}
+      {item.stats.Zeal && <Typography>Zeal: {item.stats.Zeal}</Typography>}
       <Typography variant="caption">{item.description}</Typography>
     </Box>
   );
@@ -98,6 +127,21 @@ export function EquipmentModule(props: Props) {
             </Tooltip>
           ) : (
             <Typography pt={3}>Trinket</Typography>
+          )}
+        </Box>
+      </Grid>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
+        <Box sx={slotStyle}>
+          {props.Equipment.Headwear !== null ? (
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Headwear)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Headwear.image} />
+            </Tooltip>
+          ) : (
+            <Typography pt={3}>Headwear</Typography>
           )}
         </Box>
       </Grid>

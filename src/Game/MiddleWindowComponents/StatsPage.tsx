@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import { Stats } from "../Stats";
 
 type Props = {
@@ -6,28 +6,66 @@ type Props = {
 };
 
 const statsBoxStyle = {
+  ml: 5,
   width: "100%",
   height: "100%",
 };
 
+const statBoxStyle = {
+  backgroundColor: "maroon",
+  border: "2px solid white",
+  borderRadius: "5px",
+  m: 1,
+  p: 1,
+};
+
+const totalBoxStyle = {
+  width: "90%",
+  textAlign: "center",
+  backgroundColor: "darkblue",
+  border: "2px solid white",
+  borderRadius: "5px",
+  p: 1,
+  mt: 2,
+  ml: -1,
+};
+
 export function StatsPage(props: Props) {
+  function returnTotalStats() {
+    let totalval = 0;
+    Object.values(props.stats).forEach((stat) => {
+      totalval += stat;
+    });
+
+    return totalval;
+  }
   return (
     <Box sx={statsBoxStyle}>
-      <Stack>
-        <Typography>Attack: {props.stats.Attack}</Typography>
-        <Typography>Believing: {props.stats.Believing}</Typography>
-        <Typography>Constitution: {props.stats.Constitution}</Typography>
-        <Typography>Defense: {props.stats.Defense}</Typography>
-        <Typography>Emotion: {props.stats.Emotion}</Typography>
-        <Typography>Forgiving: {props.stats.Forgiving}</Typography>
-        <Typography>Heart: {props.stats.Heart}</Typography>
-        <Typography>Imagination: {props.stats.Imagination}</Typography>
-        <Typography>Magic: {props.stats.Magic}</Typography>
-        <Typography>Muscles: {props.stats.Muscles}</Typography>
-        <Typography>Piety: {props.stats.Piety}</Typography>
-        <Typography>Sanity: {props.stats.Sanity}</Typography>
-        <Typography>Serenity: {props.stats.Serenity}</Typography>
-        <Typography>Toughness: {props.stats.Toughness}</Typography>
+      <Stack sx={{ textAlign: "left" }}>
+        <Typography variant="h5" sx={{ textAlign: "center" }}>
+          STATS
+        </Typography>
+        <Grid
+          container
+          sx={{ pt: 4 }}
+          spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+        >
+          {Object.entries(props.stats).map((stat) => {
+            return (
+              <Box sx={statBoxStyle}>
+                <Grid item>
+                  <Typography>{stat[0]}</Typography>
+                  <Typography textAlign="center">{stat[1] + " "}</Typography>
+                </Grid>
+              </Box>
+            );
+          })}
+        </Grid>
+        <Box sx={totalBoxStyle}>
+          <Typography variant="h5">Total</Typography>
+          <Typography variant="h6">{returnTotalStats()}</Typography>
+        </Box>
       </Stack>
     </Box>
   );

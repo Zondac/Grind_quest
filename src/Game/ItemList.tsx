@@ -30,7 +30,7 @@ export const HideArmor: ItemType = {
   stats: {
     Defense: 1,
     Toughness: 1,
-    Serenity: 1,
+    Responsibility: 1,
   },
 };
 
@@ -42,7 +42,7 @@ export const RatskinWristbands: ItemType = {
   stats: {
     Defense: 1,
     Toughness: 2,
-    Sanity: -1,
+    Openness: -1,
   },
 };
 
@@ -60,12 +60,12 @@ export const PoisonedFang: ItemType = {
 export const RatFeather: ItemType = {
   image: "../../Rat_feather.png",
   name: "Rat Feather",
-  slot: "Headwear",
+  slot: "Trinket",
   description: "Who knew rats could have feathers?",
   stats: {
     Defense: 2,
     Toughness: 1,
-    Serenity: 4,
+    Responsibility: 4,
   },
 };
 
@@ -85,14 +85,14 @@ export const GoblinCrown: ItemType = {
   image: "../../Goblin_crown.png",
   name: "Goblin Crown",
   slot: "Headwear",
-  description: "Fit for a king!",
+  description: "Fit for a small king!",
   stats: {
     Defense: 7,
     Emotion: 5,
     Heart: 3,
     Magic: 1,
     Toughness: 3,
-    Serenity: 3,
+    Responsibility: 3,
   },
 };
 
@@ -108,26 +108,38 @@ export const TheOneRing: ItemType = {
     Defense: 1,
     Emotion: 1,
     Forgiving: 1,
+    Grit: 1,
     Heart: 1,
     Imagination: 1,
+    Jovial: 1,
+    Kindness: 1,
+    Love: 1,
     Magic: 1,
-    Muscles: 1,
+    Navigation: 1,
+    Openness: 1,
     Piety: 1,
-    Sanity: 1,
-    Serenity: 1,
+    Questioning: 1,
+    Responsibility: 1,
+    Strength: 1,
     Toughness: 1,
+    Utilitarianism: 1,
+    Vengefulness: 1,
+    Will: 1,
+    Xenophobia: 1,
+    Yeehaw: 1,
+    Zeal: 1,
   },
 };
 
 export const GiantRatCoat: ItemType = {
-  image: "../../Giant_rar_coat.png",
+  image: "../../Giant_rat_coat.png",
   name: "Giant Rat Coat",
   slot: "Chest",
   description: "Giant for a rat, but small for me.",
   stats: {
     Defense: 2,
     Toughness: 1,
-    Serenity: 3,
+    Responsibility: 3,
   },
 };
 
@@ -135,18 +147,22 @@ export const BronzeDagger: ItemType = {
   image: "../../Bronze_dagger.png",
   name: "Bronze Dagger",
   slot: "Weapon",
-  description: "It's a dagger made from Bronze alloy.",
+  description:
+    "Short but pointy, but somehow it reminds you of your childhood.",
   stats: {
     Attack: 4,
-    Believing: 4,
-    Defense: 2,
+    Believing: -4,
+    Emotion: 2,
+    Piety: 1,
+    Strength: 3,
+    Magic: 1,
   },
 };
 
 export const GiantFang: ItemType = {
   image: "../../Giant_fang.png",
   name: "Giant Fang",
-  slot: "Weapon", 
+  slot: "Weapon",
   description: "It's bigger than expected.",
   stats: {
     Attack: 3,
@@ -175,7 +191,7 @@ export const ScrappyBelt: ItemType = {
     Defense: 1,
     Heart: 1,
     Piety: 1,
-    Muscles: 1,
+    Strength: 1,
     Imagination: 2,
   },
 };
@@ -214,7 +230,7 @@ export const BatFlesh: ItemType = {
   stats: {
     Defense: 1,
     Piety: 1,
-    Sanity: 3,
+    Openness: 3,
   },
 };
 

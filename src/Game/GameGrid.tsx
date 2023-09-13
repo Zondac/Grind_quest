@@ -1,16 +1,44 @@
 import { Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TopBar } from "./TopBar";
 import { EquipmentModule } from "./EquipmentModule";
 import { MiddleWindow } from "./MiddleWindow";
-import { HideArmor, Item, SharpRatFang } from "./ItemList";
+import {
+  BronzeDagger,
+  GiantRatCoat,
+  GoblinCrown,
+  HideArmor,
+  Item,
+  PoisonedFang,
+  RatFeather,
+  RatskinWristbands,
+  SharpRatFang,
+  TheOneRing,
+  WoodenPitchfork,
+} from "./ItemList";
 import { LootModule } from "./Modules/LootModule";
 import { Stats } from "./Stats";
 
 export function GameGrid() {
   const [playfield, setPlayfield] = useState<string | null>(null);
+  const [playerBaseStats, setPlayerBaseStats] = useState<Stats>({
+    Attack: 0,
+    Believing: 0,
+    Constitution: 0,
+    Defense: 0,
+    Emotion: 0,
+    Forgiving: 0,
+    Heart: 0,
+    Imagination: 0,
+    Magic: 0,
+    Muscles: 0,
+    Piety: 0,
+    Openness: 0,
+    Responsibility: 0,
+    Toughness: 0,
+  });
   const [playerStats, setPlayerStats] = useState<Stats>({
     Attack: 0,
     Believing: 0,
@@ -23,21 +51,22 @@ export function GameGrid() {
     Magic: 0,
     Muscles: 0,
     Piety: 0,
-    Sanity: 0,
-    Serenity: 0,
+    Openness: 0,
+    Responsibility: 0,
     Toughness: 0,
   });
   const [Equipment, setEquipment] = useState({
-    Weapon: SharpRatFang,
-    Trinket: null,
+    Weapon: BronzeDagger,
+    Trinket: RatFeather,
     Eyewear: null,
+    Headwear: GoblinCrown,
     Necklace: null,
     Choker: null,
-    Jewelry: null,
+    Jewelry: TheOneRing,
     OffHand: null,
-    Wristwear: null,
+    Wristwear: RatskinWristbands,
     Gloves: null,
-    Chest: HideArmor,
+    Chest: GiantRatCoat,
     Pants: null,
     Socks: null,
     Shoes: null,
@@ -45,17 +74,75 @@ export function GameGrid() {
     Belt: null,
     Beltwear: null,
   });
-  /*
-  const AttackTotal = Object.values(Equipment).reduce((acc, item) => {
-    if (item && item.stats.Attack && acc.stats) {
-      return acc.stats.Attack + item.stats.Attack;
-    } else {
-      return acc;
-    }
-  });
-  
-  console.log(AttackTotal);
-  */
+
+  function updateStats() {
+    let AttackTotal = 0;
+    let BelievingTotal = 0;
+    let ConstitutionTotal = 0;
+    let DefenseTotal = 0;
+    let EmotionTotal = 0;
+    let ForgivingTotal = 0;
+    let HeartTotal = 0;
+    let ImaginationTotal = 0;
+    let MagicTotal = 0;
+    let MusclesTotal = 0;
+    let PietyTotal = 0;
+    let SanityTotal = 0;
+    let SerenityTotal = 0;
+    let ToughnessTotal = 0;
+
+    Object.values(Equipment).forEach((item) => {
+      item && item.stats.Attack ? (AttackTotal += item?.stats.Attack) : null;
+      item && item.stats.Believing
+        ? (BelievingTotal += item?.stats.Believing)
+        : null;
+      item && item.stats.Constitution
+        ? (ConstitutionTotal += item?.stats.Constitution)
+        : null;
+      item && item.stats.Defense ? (DefenseTotal += item?.stats.Defense) : null;
+      item && item.stats.Emotion ? (EmotionTotal += item?.stats.Emotion) : null;
+      item && item.stats.Forgiving
+        ? (ForgivingTotal += item?.stats.Forgiving)
+        : null;
+      item && item.stats.Heart ? (HeartTotal += item?.stats.Heart) : null;
+      item && item.stats.Imagination
+        ? (ImaginationTotal += item?.stats.Imagination)
+        : null;
+      item && item.stats.Magic ? (MagicTotal += item?.stats.Magic) : null;
+      item && item.stats.Muscles ? (MusclesTotal += item?.stats.Muscles) : null;
+      item && item.stats.Piety ? (PietyTotal += item?.stats.Piety) : null;
+      item && item.stats.Openness
+        ? (SanityTotal += item?.stats.Openness)
+        : null;
+      item && item.stats.Responsibility
+        ? (SerenityTotal += item?.stats.Responsibility)
+        : null;
+      item && item.stats.Toughness
+        ? (ToughnessTotal += item?.stats.Toughness)
+        : null;
+    });
+
+    setPlayerStats({
+      Attack: AttackTotal,
+      Believing: BelievingTotal,
+      Constitution: ConstitutionTotal,
+      Defense: DefenseTotal,
+      Emotion: EmotionTotal,
+      Forgiving: ForgivingTotal,
+      Heart: HeartTotal,
+      Imagination: ImaginationTotal,
+      Magic: MagicTotal,
+      Muscles: MusclesTotal,
+      Piety: PietyTotal,
+      Openness: SanityTotal,
+      Responsibility: SerenityTotal,
+      Toughness: ToughnessTotal,
+    });
+  }
+
+  useEffect(() => {
+    updateStats();
+  }, []);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
