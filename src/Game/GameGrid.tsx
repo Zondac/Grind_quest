@@ -30,14 +30,26 @@ export function GameGrid() {
     Defense: 0,
     Emotion: 0,
     Forgiving: 0,
+    Grit: 0,
     Heart: 0,
     Imagination: 0,
+    Jovial: 0,
+    Kindness: 0,
+    Love: 0,
     Magic: 0,
-    Muscles: 0,
-    Piety: 0,
+    Navigation: 0,
     Openness: 0,
+    Piety: 0,
+    Questioning: 0,
     Responsibility: 0,
+    Strength: 0,
     Toughness: 0,
+    Utilitarianism: 0,
+    Vengefulness: 0,
+    Will: 0,
+    Xenophobia: 0,
+    Yeehaw: 0,
+    Zeal: 0,
   });
   const [playerStats, setPlayerStats] = useState<Stats>({
     Attack: 0,
@@ -46,14 +58,26 @@ export function GameGrid() {
     Defense: 0,
     Emotion: 0,
     Forgiving: 0,
+    Grit: 0,
     Heart: 0,
     Imagination: 0,
+    Jovial: 0,
+    Kindness: 0,
+    Love: 0,
     Magic: 0,
-    Muscles: 0,
-    Piety: 0,
+    Navigation: 0,
     Openness: 0,
+    Piety: 0,
+    Questioning: 0,
     Responsibility: 0,
+    Strength: 0,
     Toughness: 0,
+    Utilitarianism: 0,
+    Vengefulness: 0,
+    Will: 0,
+    Xenophobia: 0,
+    Yeehaw: 0,
+    Zeal: 0,
   });
   const [Equipment, setEquipment] = useState({
     Weapon: BronzeDagger,
@@ -82,14 +106,26 @@ export function GameGrid() {
     let DefenseTotal = 0;
     let EmotionTotal = 0;
     let ForgivingTotal = 0;
+    let GritTotal = 0;
     let HeartTotal = 0;
     let ImaginationTotal = 0;
+    let JovialTotal = 0;
+    let KindnessTotal = 0;
+    let LoveTotal = 0;
     let MagicTotal = 0;
-    let MusclesTotal = 0;
+    let NavigationTotal = 0;
+    let OpennessTotal = 0;
     let PietyTotal = 0;
-    let SanityTotal = 0;
-    let SerenityTotal = 0;
+    let QuestioningTotal = 0;
+    let ResponsibilityTotal = 0;
+    let StrengthTotal = 0;
     let ToughnessTotal = 0;
+    let UtilitarianismTotal = 0;
+    let VengefulnessTotal = 0;
+    let WillTotal = 0;
+    let XenophobiaTotal = 0;
+    let YeehawTotal = 0;
+    let ZealTotal = 0;
 
     Object.values(Equipment).forEach((item) => {
       item && item.stats.Attack ? (AttackTotal += item?.stats.Attack) : null;
@@ -104,22 +140,48 @@ export function GameGrid() {
       item && item.stats.Forgiving
         ? (ForgivingTotal += item?.stats.Forgiving)
         : null;
+      item && item.stats.Grit ? (GritTotal += item?.stats.Grit) : null;
       item && item.stats.Heart ? (HeartTotal += item?.stats.Heart) : null;
       item && item.stats.Imagination
         ? (ImaginationTotal += item?.stats.Imagination)
         : null;
+      item && item.stats.Jovial ? (JovialTotal += item?.stats.Jovial) : null;
+      item && item.stats.Kindness
+        ? (KindnessTotal += item?.stats.Kindness)
+        : null;
+      item && item.stats.Love ? (LoveTotal += item?.stats.Love) : null;
       item && item.stats.Magic ? (MagicTotal += item?.stats.Magic) : null;
-      item && item.stats.Muscles ? (MusclesTotal += item?.stats.Muscles) : null;
-      item && item.stats.Piety ? (PietyTotal += item?.stats.Piety) : null;
+      item && item.stats.Navigation
+        ? (NavigationTotal += item?.stats.Navigation)
+        : null;
       item && item.stats.Openness
-        ? (SanityTotal += item?.stats.Openness)
+        ? (OpennessTotal += item?.stats.Openness)
+        : null;
+      item && item.stats.Piety ? (PietyTotal += item?.stats.Piety) : null;
+      item && item.stats.Questioning
+        ? (QuestioningTotal += item?.stats.Questioning)
         : null;
       item && item.stats.Responsibility
-        ? (SerenityTotal += item?.stats.Responsibility)
+        ? (ResponsibilityTotal += item?.stats.Responsibility)
+        : null;
+      item && item.stats.Strength
+        ? (StrengthTotal += item?.stats.Strength)
         : null;
       item && item.stats.Toughness
         ? (ToughnessTotal += item?.stats.Toughness)
         : null;
+      item && item.stats.Utilitarianism
+        ? (UtilitarianismTotal += item?.stats.Utilitarianism)
+        : null;
+      item && item.stats.Vengefulness
+        ? (VengefulnessTotal += item?.stats.Vengefulness)
+        : null;
+      item && item.stats.Will ? (WillTotal += item?.stats.Will) : null;
+      item && item.stats.Xenophobia
+        ? (XenophobiaTotal += item?.stats.Xenophobia)
+        : null;
+      item && item.stats.Yeehaw ? (YeehawTotal += item?.stats.Yeehaw) : null;
+      item && item.stats.Zeal ? (ZealTotal += item?.stats.Zeal) : null;
     });
 
     setPlayerStats({
@@ -129,14 +191,26 @@ export function GameGrid() {
       Defense: DefenseTotal,
       Emotion: EmotionTotal,
       Forgiving: ForgivingTotal,
+      Grit: GritTotal,
       Heart: HeartTotal,
       Imagination: ImaginationTotal,
+      Jovial: JovialTotal,
+      Kindness: KindnessTotal,
+      Love: LoveTotal,
       Magic: MagicTotal,
-      Muscles: MusclesTotal,
+      Navigation: NavigationTotal,
+      Openness: OpennessTotal,
       Piety: PietyTotal,
-      Openness: SanityTotal,
-      Responsibility: SerenityTotal,
+      Questioning: QuestioningTotal,
+      Responsibility: ResponsibilityTotal,
+      Strength: StrengthTotal,
       Toughness: ToughnessTotal,
+      Utilitarianism: UtilitarianismTotal,
+      Vengefulness: VengefulnessTotal,
+      Will: WillTotal,
+      Xenophobia: XenophobiaTotal,
+      Yeehaw: YeehawTotal,
+      Zeal: ZealTotal,
     });
   }
 
