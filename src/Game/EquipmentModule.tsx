@@ -24,6 +24,7 @@ function ItemTooltip(item: ItemType) {
   return (
     <Box>
       <Typography variant="h6">{item.name}</Typography>
+      <Typography variant="subtitle2">{item.slot}</Typography>
       {item.stats.Attack && (
         <Typography>Attack: {item.stats.Attack}</Typography>
       )}
