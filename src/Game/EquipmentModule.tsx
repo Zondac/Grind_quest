@@ -7,8 +7,6 @@ type Props = {
 
 const slotStyle = {
   pt: 0.5,
-  ml: 2,
-  mt: 2,
   height: "80px",
   width: "80px",
   backgroundColor: "darkgrey",
@@ -66,12 +64,14 @@ function ItemTooltip(item: ItemType) {
   );
 }
 
-const gridWidth = 3;
-
 export function EquipmentModule(props: Props) {
   return (
-    <Grid container spacing={2} p={2}>
-      <Grid item xs={gridWidth}>
+    <Grid
+      container
+      spacing={{ xs: 2, md: 3 }}
+      columns={{ xs: 4, sm: 8, md: 10, lg: 11 }}
+    >
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Weapon !== null ? (
             <Tooltip
@@ -86,7 +86,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Trinket !== null ? (
             <Tooltip
@@ -101,7 +101,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Eyewear !== null ? (
             <Tooltip
@@ -116,7 +116,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>{" "}
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Necklace !== null ? (
             <Tooltip
@@ -131,7 +131,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Choker !== null ? (
             <Tooltip
@@ -146,7 +146,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Jewelry !== null ? (
             <Tooltip
@@ -161,7 +161,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.OffHand !== null ? (
             <Tooltip
@@ -176,7 +176,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Wristwear !== null ? (
             <Tooltip
@@ -191,7 +191,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Gloves !== null ? (
             <Tooltip
@@ -206,7 +206,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Chest !== null ? (
             <Tooltip
@@ -221,7 +221,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Pants !== null ? (
             <Tooltip
@@ -236,7 +236,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Socks !== null ? (
             <Tooltip
@@ -251,7 +251,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Shoes !== null ? (
             <Tooltip
@@ -266,7 +266,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Backwear !== null ? (
             <Tooltip
@@ -281,7 +281,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Belt !== null ? (
             <Tooltip
@@ -296,7 +296,7 @@ export function EquipmentModule(props: Props) {
           )}
         </Box>
       </Grid>
-      <Grid item xs={gridWidth}>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Beltwear !== null ? (
             <Tooltip

@@ -45,6 +45,17 @@ export function GameGrid() {
     Belt: null,
     Beltwear: null,
   });
+  /*
+  const AttackTotal = Object.values(Equipment).reduce((acc, item) => {
+    if (item && item.stats.Attack && acc.stats) {
+      return acc.stats.Attack + item.stats.Attack;
+    } else {
+      return acc;
+    }
+  });
+  
+  console.log(AttackTotal);
+  */
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -67,7 +78,8 @@ export function GameGrid() {
             <Box
               sx={{
                 position: "relative",
-                height: "500px",
+                px: 2,
+                pb: 2,
                 backgroundColor: "darkslategrey",
                 border: "2px solid lightgrey",
                 borderRadius: "16px",
@@ -80,7 +92,8 @@ export function GameGrid() {
               sx={{
                 mt: 2,
                 position: "relative",
-                height: "256px",
+                pb: 2,
+                px: 2,
                 backgroundColor: "darkslategrey",
                 border: "2px solid lightgrey",
                 borderRadius: "16px",
