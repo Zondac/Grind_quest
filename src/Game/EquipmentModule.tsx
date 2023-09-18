@@ -99,6 +99,7 @@ export function EquipmentModule(props: Props) {
     <Grid
       container
       spacing={{ xs: 2, md: 3 }}
+      sx={{ justifyContent: "center" }}
       columns={{ xs: 4, sm: 8, md: 10, lg: 11 }}
     >
       <Grid item xs={6} sm={4} md={3} lg={2.4}>

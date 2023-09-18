@@ -2,22 +2,25 @@ import { Typography } from "@mui/material/";
 import { RegionSelect } from "./MiddleWindowComponents/RegionSelect";
 import { StatsPage } from "./MiddleWindowComponents/StatsPage";
 import { Stats } from "./Stats";
+import { InventoryPage } from "./MiddleWindowComponents/InventoryPage";
 
 type Props = {
   state: string | null;
   stats: Stats;
+  inventory: String[];
+  addToInventory: (item: String) => void;
 };
 
 export function MiddleWindow(props: Props) {
   switch (props.state) {
     case "fight":
-      return <RegionSelect />;
+      return <RegionSelect addToInventory={props.addToInventory} />;
       break;
     case "stats":
       return <StatsPage stats={props.stats} />;
       break;
     case "inventory":
-      return <Typography>inventory here soon!</Typography>;
+      return <InventoryPage inventory={props.inventory} />;
     default:
       break;
   }
