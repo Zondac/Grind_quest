@@ -3,6 +3,7 @@ import "./App.css";
 import { GameGrid } from "./Game/GameGrid";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { StatHandler } from "./Game/Util/StatHandler";
 
 const darkTheme = createTheme({
   palette: {
@@ -14,17 +15,7 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <Box
-        sx={{
-          position: "absolute",
-          left: 0,
-          top: 0,
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        <GameGrid />
-      </Box>
+      <StatHandler />
     </ThemeProvider>
   );
 }
