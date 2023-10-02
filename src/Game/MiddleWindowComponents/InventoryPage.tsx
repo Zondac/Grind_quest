@@ -95,8 +95,7 @@ function ItemTooltip(item: ItemType) {
 }
 
 export function InventoryPage(_: Props) {
-  const inventory = useAppSelector((state) => state.items);
-  console.log(inventory);
+  const inventory = useAppSelector((state) => state.inventory.items);
   return (
     <Grid
       container
@@ -104,7 +103,7 @@ export function InventoryPage(_: Props) {
       sx={{ justifyContent: "center" }}
       columns={{ xs: 4, sm: 8, md: 10, lg: 11 }}
     >
-      {inventory.items.map((item, _) => {
+      {inventory.map((item, _) => {
         return (
           <Grid item xs={6} sm={4} md={3} lg={2.4}>
             {Object.values(Items).map((loopedItem, _) => {

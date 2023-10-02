@@ -15,9 +15,11 @@ type Props = {
   resetDestination: () => void;
 };
 
+let hitSound = new Audio("/Sound/hitSound.wav");
 function fightEnemy(enemy: string) {
   switch (enemy) {
     case "Rat":
+      hitSound.play();
       break;
     default:
       break;
@@ -37,7 +39,6 @@ export function NearbyCaves(props: Props) {
         </Grid>
         <Grid item xs={2}>
           <Box sx={enemyStyle} onClick={() => fightEnemy("Rat")}>
-            {" "}
             <Typography>Rat</Typography>
             <img src="../../../Rat.png" draggable={false} />
           </Box>

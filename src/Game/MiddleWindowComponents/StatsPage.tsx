@@ -63,6 +63,7 @@ export function StatsPage(props: Props) {
           {Object.entries(props.stats).map((stat) => {
             return (
               <Tooltip
+                key={stat[0]}
                 title={
                   <Box sx={{ width: "150px" }}>
                     <Typography sx={{ textAlign: "center" }} variant="h6">

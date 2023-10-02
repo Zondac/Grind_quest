@@ -16,44 +16,6 @@ import {
 import { Stats } from "../Stats";
 
 export function StatHandler() {
-  const [inventory, setInventory] = useState<String[]>([
-    "Sharp Rat Fang",
-    "Scrap Iron Longsword",
-    "Rat Feather",
-    "Scrappy Belt",
-    "Sharp Rat Fang",
-    "Sharp Rat Fang",
-    "Sharp Rat Fang",
-    "Sharp Rat Fang",
-  ]);
-  const [playerBaseStats, setPlayerBaseStats] = useState<Stats>({
-    Attack: 0,
-    Believing: 0,
-    Constitution: 0,
-    Defense: 0,
-    Emotion: 0,
-    Forgiving: 0,
-    Grit: 0,
-    Heart: 0,
-    Imagination: 0,
-    Jovial: 0,
-    Kindness: 0,
-    Love: 0,
-    Magic: 0,
-    Navigation: 0,
-    Openness: 0,
-    Piety: 0,
-    Questioning: 0,
-    Responsibility: 0,
-    Strength: 0,
-    Toughness: 0,
-    Utilitarianism: 0,
-    Vengefulness: 0,
-    Will: 0,
-    Xenophobia: 0,
-    Yeehaw: 0,
-    Zeal: 0,
-  });
   const [playerStats, setPlayerStats] = useState<Stats>({
     Attack: 0,
     Believing: 0,
@@ -221,14 +183,6 @@ export function StatHandler() {
     updateStats();
   }, []);
 
-  function addToInventory(item: string) {
-    console.log("Added", item, "to inventory");
-    setInventory((items) => {
-      let newInventory = [...items];
-      newInventory.push(item);
-      return newInventory;
-    });
-  }
   return (
     <Box
       sx={{
@@ -239,12 +193,7 @@ export function StatHandler() {
         height: "100%",
       }}
     >
-      <GameGrid
-        playerStats={playerStats}
-        Equipment={Equipment}
-        inventory={inventory}
-        addToInventory={addToInventory}
-      />
+      <GameGrid playerStats={playerStats} Equipment={Equipment} />
     </Box>
   );
 }
