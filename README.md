@@ -1,12 +1,11 @@
-# React + TypeScript + Vite
+# Grind Quest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An incremental game about grinding
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
+The goal is to make a game that's easy to modify (add items, enemies, locations and possibly quests).
+Idk what else to put here man
+grind those stats!
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
