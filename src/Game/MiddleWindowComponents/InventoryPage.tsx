@@ -1,12 +1,9 @@
 import { Box, Grid, Tooltip, Typography } from "@mui/material";
-import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { useAppSelector } from "../../app/hooks";
 import * as Items from "../ItemList";
 import { ItemType } from "../Items";
-import {}
 
-type Props = {
-  inventory: String[];
-};
+type Props = {};
 
 const slotStyle = {
   pt: 0.5,
@@ -97,8 +94,9 @@ function ItemTooltip(item: ItemType) {
   );
 }
 
-export function InventoryPage(props: Props) {
-  const items = useAppSelector((state) => state.items)
+export function InventoryPage(_: Props) {
+  const inventory = useAppSelector((state) => state.items);
+  console.log(inventory);
   return (
     <Grid
       container
@@ -106,10 +104,10 @@ export function InventoryPage(props: Props) {
       sx={{ justifyContent: "center" }}
       columns={{ xs: 4, sm: 8, md: 10, lg: 11 }}
     >
-      {items.map((item, index) => {
+      {inventory.items.map((item, _) => {
         return (
           <Grid item xs={6} sm={4} md={3} lg={2.4}>
-            {Object.values(Items).map((loopedItem, index) => {
+            {Object.values(Items).map((loopedItem, _) => {
               return loopedItem.name === item ? (
                 <Box sx={slotStyle}>
                   <Tooltip

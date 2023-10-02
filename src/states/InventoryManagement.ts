@@ -9,7 +9,15 @@ interface InventoryState {
 
 // Define the initial state using that type
 const initialState: InventoryState = {
-  items: [],
+  items: [    
+  "Sharp Rat Fang",
+  "Scrap Iron Longsword",
+  "Rat Feather",
+  "Scrappy Belt",
+  "Sharp Rat Fang",
+  "Sharp Rat Fang",
+  "Sharp Rat Fang",
+  "Sharp Rat Fang",],
   gold: 0,
 }
 
@@ -35,7 +43,6 @@ export const inventorySlice = createSlice({
 export const { removeItem, addGold, removeGold, addItemToInventory } = inventorySlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const goldCount = (state: RootState) => state.gold;
 export const itemsCount = (state: RootState) => state.items;
 
 export default inventorySlice.reducer
