@@ -14,9 +14,7 @@ const mapStyle = {
   },
 };
 
-type Props = {
-  addToInventory: (item: String) => void;
-};
+type Props = {};
 
 export function RegionSelect(props: Props) {
   const [destination, setDestination] = useState<string>("");
@@ -39,7 +37,6 @@ export function RegionSelect(props: Props) {
         <Destination
           location={destination}
           resetDestination={() => setDestination("")}
-          addToInventory={props.addToInventory}
         />
       )}
     </>

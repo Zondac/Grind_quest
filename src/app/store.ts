@@ -1,12 +1,12 @@
-import {configureStore} from '@reduxjs/toolkit'
+import {configureStore} from '@reduxjs/toolkit';
+import itemsReducer from '../states/InventoryManagement';
 
-const store = configureStore({
+export const store = configureStore({
     reducer: {
-        gold: goldReducer,
         items: itemsReducer,
     }
 })
 
 export type RootState = ReturnType<typeof store.getState>
 
-export type RootDispatch = typeof store.dispatch
+export type RootDispatch = typeof store.dispatch 

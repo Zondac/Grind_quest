@@ -7,20 +7,18 @@ import { InventoryPage } from "./MiddleWindowComponents/InventoryPage";
 type Props = {
   state: string | null;
   stats: Stats;
-  inventory: String[];
-  addToInventory: (item: String) => void;
 };
 
 export function MiddleWindow(props: Props) {
   switch (props.state) {
     case "fight":
-      return <RegionSelect addToInventory={props.addToInventory} />;
+      return <RegionSelect />;
       break;
     case "stats":
       return <StatsPage stats={props.stats} />;
       break;
     case "inventory":
-      return <InventoryPage inventory={props.inventory} />;
+      return <InventoryPage />;
     default:
       break;
   }

@@ -11,8 +11,6 @@ import { TopBar } from "./TopBar";
 type Props = {
   playerStats: Stats;
   Equipment: EquipmentType;
-  inventory: String[];
-  addToInventory: (item: string) => void;
 };
 
 export function GameGrid(props: Props) {
@@ -41,12 +39,7 @@ export function GameGrid(props: Props) {
           </Stack>
         </Grid>
         <Grid item xs={6.5}>
-          <MiddleWindow
-            state={playfield}
-            stats={props.playerStats}
-            inventory={props.inventory}
-            addToInventory={props.addToInventory}
-          />
+          <MiddleWindow state={playfield} stats={props.playerStats} />
         </Grid>
         <Grid item xs={4.1}>
           <Stack>
