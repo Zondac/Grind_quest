@@ -9,14 +9,14 @@ const slotStyle = {
   pt: 0.5,
   height: "80px",
   width: "80px",
-  backgroundColor: "darkgrey",
+  backgroundColor: "rgba(128, 128, 128, 0.5)",
   textAlign: "center",
   border: "2px solid lightgrey",
   borderRadius: "5px",
   userSelect: "none",
   zIndex: "2",
   "&:hover": {
-    backgroundColor: "lightgrey",
+    backgroundColor: "rgba(200, 200, 200, 0.75)",
   },
 };
 
@@ -98,10 +98,47 @@ export function EquipmentModule(props: Props) {
   return (
     <Grid
       container
-      spacing={{ xs: 2, md: 3 }}
-      sx={{ justifyContent: "center" }}
+      spacing={0}
+      sx={{
+        justifyContent: "center",
+        backgroundImage: "url(/Silhouette.png)",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
       columns={{ xs: 4, sm: 8, md: 10, lg: 11 }}
     >
+      <Grid item xs={6} sm={4} md={3} lg={2.4} />
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
+        <Box sx={slotStyle}>
+          {props.Equipment.Earwear !== null ? (
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Earwear)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Earwear.image} />
+            </Tooltip>
+          ) : (
+            <Typography pt={3}>Earwear</Typography>
+          )}
+        </Box>
+      </Grid>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
+        <Box sx={slotStyle}>
+          {props.Equipment.Headwear !== null ? (
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Headwear)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Headwear.image} />
+            </Tooltip>
+          ) : (
+            <Typography pt={3}>Headwear</Typography>
+          )}
+        </Box>
+      </Grid>
+      <Grid item xs={6} sm={4} md={3} lg={2.4} />
       <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
           {props.Equipment.Weapon !== null ? (
@@ -119,6 +156,21 @@ export function EquipmentModule(props: Props) {
       </Grid>
       <Grid item xs={6} sm={4} md={3} lg={2.4}>
         <Box sx={slotStyle}>
+          {props.Equipment.Shoulder !== null ? (
+            <Tooltip
+              title={ItemTooltip(props.Equipment.Shoulder)}
+              placement="top"
+              arrow
+            >
+              <img src={props.Equipment.Shoulder.image} />
+            </Tooltip>
+          ) : (
+            <Typography pt={3}>Shoulder</Typography>
+          )}
+        </Box>
+      </Grid>
+      <Grid item xs={6} sm={4} md={3} lg={2.4}>
+        <Box sx={slotStyle}>
           {props.Equipment.Trinket !== null ? (
             <Tooltip
               title={ItemTooltip(props.Equipment.Trinket)}
@@ -129,21 +181,6 @@ export function EquipmentModule(props: Props) {
             </Tooltip>
           ) : (
             <Typography pt={3}>Trinket</Typography>
-          )}
-        </Box>
-      </Grid>
-      <Grid item xs={6} sm={4} md={3} lg={2.4}>
-        <Box sx={slotStyle}>
-          {props.Equipment.Headwear !== null ? (
-            <Tooltip
-              title={ItemTooltip(props.Equipment.Headwear)}
-              placement="top"
-              arrow
-            >
-              <img src={props.Equipment.Headwear.image} />
-            </Tooltip>
-          ) : (
-            <Typography pt={3}>Headwear</Typography>
           )}
         </Box>
       </Grid>

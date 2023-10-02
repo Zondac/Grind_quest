@@ -108,7 +108,7 @@ export function InventoryPage(_: Props) {
           <Grid item xs={6} sm={4} md={3} lg={2.4}>
             {Object.values(Items).map((loopedItem, _) => {
               return loopedItem.name === item ? (
-                <Box sx={slotStyle}>
+                <Box sx={slotStyle} key={loopedItem.name}>
                   <Tooltip
                     title={ItemTooltip(loopedItem)}
                     placement="top"

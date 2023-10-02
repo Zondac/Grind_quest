@@ -45,6 +45,8 @@ export function StatHandler() {
     Zeal: 0,
   });
   const [Equipment, setEquipment] = useState({
+    Earwear: null,
+    Shoulder: null,
     Weapon: ScrapIronLongsword,
     Trinket: RatFeather,
     Eyewear: null,
