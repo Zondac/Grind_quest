@@ -7,8 +7,8 @@ type Props = {
 
 const slotStyle = {
   pt: 0.5,
-  height: "80px",
-  width: "80px",
+  height: "76px",
+  width: "76px",
   backgroundColor: "rgba(128, 128, 128, 0.5)",
   textAlign: "center",
   border: "2px solid lightgrey",
@@ -109,7 +109,7 @@ export function EquipmentModule(props: Props) {
         direction={"row"}
         sx={{ width: "100%" }}
         justifyContent={"center"}
-        spacing={2}
+        spacing={1}
         mb={1}
       >
         <Box sx={slotStyle}>
@@ -122,7 +122,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Earwear.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Earwear</Typography>
+            <Typography pt={2.5}>Earwear</Typography>
           )}
         </Box>
         <Box sx={slotStyle}>
@@ -135,7 +135,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Headwear.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Headwear</Typography>
+            <Typography pt={2.5}>Headwear</Typography>
           )}
         </Box>
       </Stack>
@@ -143,7 +143,7 @@ export function EquipmentModule(props: Props) {
         direction={"row"}
         sx={{ width: "100%" }}
         justifyContent={"center"}
-        spacing={2}
+        spacing={1}
         my={1}
       >
         <Box sx={slotStyle}>
@@ -156,7 +156,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Weapon.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Weapon</Typography>
+            <Typography pt={2.5}>Weapon</Typography>
           )}
         </Box>
         <Box sx={slotStyle}>
@@ -169,7 +169,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Shoulder.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Shoulder</Typography>
+            <Typography pt={2.5}>Shoulder</Typography>
           )}
         </Box>
         <Box sx={slotStyle}>
@@ -182,7 +182,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Necklace.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Necklace</Typography>
+            <Typography pt={2.5}>Necklace</Typography>
           )}
         </Box>
         <Box sx={slotStyle}>
@@ -195,7 +195,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Backwear.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Backwear</Typography>
+            <Typography pt={2.5}>Backwear</Typography>
           )}
         </Box>
       </Stack>
@@ -203,7 +203,7 @@ export function EquipmentModule(props: Props) {
         direction={"row"}
         sx={{ width: "100%" }}
         justifyContent={"center"}
-        spacing={2}
+        spacing={1}
         my={1}
       >
         <Box sx={slotStyle}>
@@ -216,7 +216,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Gloves.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Gloves</Typography>
+            <Typography pt={2.5}>Gloves</Typography>
           )}
         </Box>
         <Box sx={slotStyle}>
@@ -229,7 +229,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Wristwear.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Wrists</Typography>
+            <Typography pt={2.5}>Wrists</Typography>
           )}
         </Box>
         <Box sx={slotStyle}>
@@ -242,7 +242,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Chest.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Chest</Typography>
+            <Typography pt={2.5}>Chest</Typography>
           )}
         </Box>
         <Box sx={slotStyle}>
@@ -255,7 +255,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.OffHand.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>OffHand</Typography>
+            <Typography pt={2.5}>OffHand</Typography>
           )}
         </Box>
       </Stack>
@@ -263,7 +263,7 @@ export function EquipmentModule(props: Props) {
         direction={"row"}
         sx={{ width: "100%" }}
         justifyContent={"center"}
-        spacing={2}
+        spacing={1}
         my={1}
       >
         <Box sx={slotStyle}>
@@ -276,7 +276,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Trinket.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Trinket</Typography>
+            <Typography pt={2.5}>Trinket</Typography>
           )}
         </Box>
         <Box sx={slotStyle}>
@@ -289,7 +289,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Beltwear.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Beltwear</Typography>
+            <Typography pt={2.5}>Beltwear</Typography>
           )}
         </Box>
         <Box sx={slotStyle}>
@@ -302,7 +302,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Belt.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Belt</Typography>
+            <Typography pt={2.5}>Belt</Typography>
           )}
         </Box>
         <Box sx={slotStyle}>
@@ -315,7 +315,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Ring.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Ring</Typography>
+            <Typography pt={2.5}>Ring</Typography>
           )}
         </Box>
       </Stack>
@@ -323,7 +323,7 @@ export function EquipmentModule(props: Props) {
         direction={"row"}
         sx={{ width: "100%" }}
         justifyContent={"center"}
-        spacing={2}
+        spacing={1}
         mt={1}
       >
         <Box sx={slotStyle}>
@@ -336,7 +336,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Shoes.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Shoes</Typography>
+            <Typography pt={2.5}>Shoes</Typography>
           )}
         </Box>
         <Box sx={slotStyle}>
@@ -349,7 +349,7 @@ export function EquipmentModule(props: Props) {
               <img src={props.Equipment.Pants.image} />
             </Tooltip>
           ) : (
-            <Typography pt={3}>Pants</Typography>
+            <Typography pt={2.5}>Pants</Typography>
           )}
         </Box>
       </Stack>
